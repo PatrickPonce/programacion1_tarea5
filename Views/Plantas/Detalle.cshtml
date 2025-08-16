@@ -1,0 +1,17 @@
+@model PROGRAMACION1_TAREA5.Models.Planta
+
+@{
+    ViewData["Title"] = @Model.Nombre;
+}
+
+<div class="container mt-4">
+    <h2>@Model.Nombre</h2>
+    <img src="@Model.Imagen" class="detalle-img" alt="@Model.Nombre" />
+
+    <p><b>Origen:</b> @Model.Origen</p>
+    <p><b>Especie:</b> @Model.Especie</p>
+    <p><b>Altura máxima:</b> @Model.AlturaMaxima m</p>
+    <p><b>Notas:</b> @Model.Notas</p>
+
+    <a href="@Url.Action("Index", "Plantas")" class="btn btn-secondary">Volver</a>
+</div>

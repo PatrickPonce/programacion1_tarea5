@@ -1,0 +1,24 @@
+@model IEnumerable<PROGRAMACION1_TAREA5.Models.Planta>
+
+@{
+    ViewData["Title"] = "Plantas del Perú";
+}
+
+<h1 class="text-center">Plantas Originarias del Perú</h1>
+
+<div class="row">
+    @foreach (var planta in Model)
+    {
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card h-100">
+                <img src="@planta.Imagen" class="card-img-top fixed-img" alt="@planta.Nombre">
+                <div class="card-body">
+                    <h5 class="card-title">@planta.Nombre</h5>
+                    <p><b>Especie:</b> @planta.Especie</p>
+                    <p><b>Origen:</b> @planta.Origen</p>
+                    <a href="@Url.Action("Detalle", "Plantas", new { id = planta.Id })" class="btn btn-success">Ver más</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
