@@ -4,19 +4,21 @@
     ViewData["Title"] = "Plantas del Perú";
 }
 
-<h1 class="text-center">Plantas Originarias del Perú</h1>
+<h1 class="text-center mb-4 text-success">Plantas Originarias del Perú</h1>
 
 <div class="row">
     @foreach (var planta in Model)
     {
         <div class="col-md-4 col-sm-6 mb-4">
-            <div class="card h-100">
+            <div class="card h-100 shadow-sm border-0">
                 <img src="@planta.Imagen" class="card-img-top fixed-img" alt="@planta.Nombre">
-                <div class="card-body">
-                    <h5 class="card-title">@planta.Nombre</h5>
-                    <p><b>Especie:</b> @planta.Especie</p>
-                    <p><b>Origen:</b> @planta.Origen</p>
-                    <a href="@Url.Action("Detalle", "Plantas", new { id = planta.Id })" class="btn btn-success">Ver más</a>
+                <div class="card-body text-center">
+                    <h4 class="card-title text-success fw-bold">@planta.Nombre</h4>
+                    <p class="mb-1"><b>Especie:</b> @planta.Especie</p>
+                    <p class="mb-3"><b>Origen:</b> @planta.Origen</p>
+                    <a href="@Url.Action("Detalle", "Plantas", new { id = planta.Id })" class="btn btn-outline-success btn-sm">
+                        Ver más
+                    </a>
                 </div>
             </div>
         </div>

@@ -4,14 +4,31 @@
     ViewData["Title"] = @Model.Nombre;
 }
 
-<div class="container mt-4">
-    <h2>@Model.Nombre</h2>
-    <img src="@Model.Imagen" class="detalle-img" alt="@Model.Nombre" />
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="row g-0">
+            <div class="col-md-5 text-center bg-light d-flex align-items-center justify-content-center p-3">
+                <img src="@Model.Imagen" alt="@Model.Nombre" class="img-fluid rounded detalle-img" style="max-height: 350px; object-fit: cover;" />
+            </div>
 
-    <p><b>Origen:</b> @Model.Origen</p>
-    <p><b>Especie:</b> @Model.Especie</p>
-    <p><b>Altura máxima:</b> @Model.AlturaMaxima m</p>
-    <p><b>Notas:</b> @Model.Notas</p>
+            <div class="col-md-7">
+                <div class="card-body p-4">
+                    <h2 class="card-title text-success fw-bold mb-3">@Model.Nombre</h2>
 
-    <a href="@Url.Action("Index", "Plantas")" class="btn btn-secondary">Volver</a>
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item"><strong>Origen:</strong> @Model.Origen</li>
+                        <li class="list-group-item"><strong>Especie:</strong> @Model.Especie</li>
+                        <li class="list-group-item"><strong>Altura máxima:</strong> @Model.AlturaMaxima m</li>
+                    </ul>
+
+                    <p class="card-text"><strong>Notas:</strong> @Model.Notas</p>
+
+                    <div class="mt-4">
+                        <a href="@Url.Action("Index", "Plantas")" class="btn btn-outline-success btn-lg">Volver a la lista</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
